@@ -71,11 +71,11 @@
                                 Campo Válido!
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-2">
                             <label for="validationCustomUsername" class="form-label">Data de Nascimento</label>
                             <div class="input-group has-validation">
                                 <!--<span class="input-group-text" id="inputGroupPrepend">@</span>-->
-                                <input type="date" class="form-control" id="validationCustomUsername"
+                                <input style="text-align: right;" type="date" class="form-control" id="validationCustomUsername"
                                     aria-describedby="inputGroupPrepend" required>
                                 <div class="invalid-feedback">
                                     Por favor insira uma data.
@@ -85,7 +85,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-2">
                             <label for="validationCustom02" class="form-label">Sexo</label>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="flexRadioDefault"
@@ -112,7 +112,7 @@
                                 Campo Válido!
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-2">
                             <label for="validationCustom03" class="form-label">Cidade</label>
                             <input type="text" class="form-control" id="validationCustom03" required>
                             <div class="invalid-feedback">
@@ -122,7 +122,7 @@
                                 Campo Válido!
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-1">
                             <label for="validationCustom04" class="form-label">Estado</label>
                             <select class="form-select" id="validationCustom04" required>
                                 <option selected disabled value="">Choose...</option>
@@ -139,7 +139,7 @@
                                 Campo Válido!
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-2">
                             <label for="validationCustom05" class="form-label">CEP</label>
                             <input type="text" class="form-control" id="validationCustom05" required>
                             <div class="invalid-feedback">
@@ -176,8 +176,8 @@
             </h2>
             <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
                 data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body">
-                    <form class="d-flex">
+                <div align="center" class="accordion-body">
+                    <form class="d-flex col-md-3">
                         <input class="form-control me-2" type="search" placeholder="Insira o nome do cliente"
                             aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Pesquisar</button>
@@ -206,12 +206,19 @@
                             <td>DF</td>
                             <td>72.258-784</td>
                             <td>
-                                <button type="button" class="btn btn-primary" id="liveAlertBtn">Sim</button>
-                                
-                                <div class="alert alert-primary alert-dismissible" role="alert" id="liveAlert">
-                                    <strong>Pedido Postado.</strong> Aguardando Transporte.
-                                    <button type="button" class="btn-close" data-bs-dismiss="alert"
-                                        aria-label="Close"></button>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <button type="button" class="btn btn-primary" id="liveAlertBtn">Sim</button>
+                                        </td>
+                                        <td>
+                                            <div class="alert alert-primary alert-dismissible col-md-8" role="alert" id="liveAlert">
+                                                <strong>Pedido Postado.</strong> Aguardando Transporte.
+                                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                                    aria-label="Close"></button>
+                                        </td>
+                                    </tr>
+                                </table> 
                                 </div>
                             </td>
                         </tr>
@@ -244,13 +251,20 @@
                             <td>PI</td>
                             <td>64.200‑900</td>
                             <td>
-                                <button class="btn btn-primary">Sim</button>
-
-                                <div class="alert alert-warning alert-dismissible" role="alert" id="liveAlert">
-                                    <strong>Pedido Devolvido.</strong> Cliente não localizado.
-                                    <button type="button" class="btn-close" data-bs-dismiss="alert"
-                                        aria-label="Close"></button>
-                                </div>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <button class="btn btn-primary">Sim</button>
+                                        </td>
+                                        <td>
+                                            <div class="alert alert-warning alert-dismissible col-md-8" role="alert" id="liveAlert">
+                                                <strong>Pedido Devolvido.</strong> Cliente não localizado.
+                                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
                             </td>
                         </tr>
                         <tr>
