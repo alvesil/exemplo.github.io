@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <script src="./js/bootstrap.bundle.js"></script>
+    <title>Formulário com Bootstrap</title>
+</head>
+
+<body class="bg-dark">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Cadastros</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Cadastros de Clientes</li>
+        </ol>
+    </nav>
+    <br>
+    <div align="center">
+        <button type="button" class="btn btn-primary">
+            Clientes cadastrados <span class="badge bg-success">6</span>
+        </button>
+        <button type="button" class="btn btn-primary">
+            Clientes Satisfeitos <span class="badge bg-dark">4</span>
+        </button>
+        <button type="button" class="btn btn-primary">
+            Clientes Insatisfeitos <span class="badge bg-warning">2</span>
+        </button>
+        <button style="margin-left: 15px;" type="button" class="btn btn-primary position-relative">
+            Pedidos
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info">
+                25
+                <span class="visually-hidden">mensagens não lidas</span>
+            </span>
+        </button>
+        <button style="margin: 15px;" type="button" class="btn btn-primary position-relative">
+            Mensagens
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">
+                159
+                <span class="visually-hidden">mensagens não lidas</span>
+            </span>
+        </button>
+        <button type="button" class="btn btn-primary position-relative">
+            Devoluções
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                1
+                <span class="visually-hidden">mensagens não lidas</span>
+            </span>
+        </button>
+    </div>
+    <br>
+    <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingOne">
+                <button class="accordion-button collapsed bg-primary text-light" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseOne" aria-expanded="true" aria-controls="flush-collapseOne">
+                    Cadastrar Clientes
+                </button>
+            </h2>
+            <div id="flush-collapseOne" class="accordion-collapse collapse show" aria-labelledby="flush-headingOne"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    <form class="row g-3 needs-validation" novalidate>
+                        <div class="col-md-4">
+                            <label for="validationCustom01" class="form-label">Nome Completo</label>
+                            <input type="text" class="form-control" id="validationCustom01" required>
+                            <div class="valid-feedback">
+                                Campo Válido!
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="validationCustomUsername" class="form-label">Data de Nascimento</label>
+                            <div class="input-group has-validation">
+                                <!--<span class="input-group-text" id="inputGroupPrepend">@</span>-->
+                                <input type="date" class="form-control" id="validationCustomUsername"
+                                    aria-describedby="inputGroupPrepend" required>
+                                <div class="invalid-feedback">
+                                    Por favor insira uma data.
+                                </div>
+                                <div class="valid-feedback">
+                                    Campo Válido!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="validationCustom02" class="form-label">Sexo</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                    id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Masculino
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                    id="flexRadioDefault2">
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                    Feminino
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                    id="flexRadioDefault3">
+                                <label class="form-check-label" for="flexRadioDefault3">
+                                    Não declarar
+                                </label>
+                            </div>
+                            <div class="valid-feedback">
+                                Campo Válido!
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="validationCustom03" class="form-label">Cidade</label>
+                            <input type="text" class="form-control" id="validationCustom03" required>
+                            <div class="invalid-feedback">
+                                Por favor insira uma Cidade.
+                            </div>
+                            <div class="valid-feedback">
+                                Campo Válido!
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="validationCustom04" class="form-label">Estado</label>
+                            <select class="form-select" id="validationCustom04" required>
+                                <option selected disabled value="">Choose...</option>
+                                <option>AC</option>
+                                <option>DF</option>
+                                <option>GO</option>
+                                <option>MS</option>
+                                <option>SP</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Por favor insira um estado.
+                            </div>
+                            <div class="valid-feedback">
+                                Campo Válido!
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="validationCustom05" class="form-label">CEP</label>
+                            <input type="text" class="form-control" id="validationCustom05" required>
+                            <div class="invalid-feedback">
+                                Por favor insira um CEP.
+                            </div>
+                            <div class="valid-feedback">
+                                Campo Válido!
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                                <label class="form-check-label" for="invalidCheck">
+                                    Concordo com os termos de cadastro de clientes.
+                                </label>
+                                <div class="invalid-feedback">
+                                    Você precisa concordar com os termos!.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12" align="center">
+                            <button class="btn btn-outline-primary" type="submit">Gravar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingTwo">
+                <button class="accordion-button collapsed bg-primary text-light" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                    Consultar Clientes
+                </button>
+            </h2>
+            <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Insira o nome do cliente"
+                            aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Pesquisar</button>
+                    </form>
+                </div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#(ID)</th>
+                            <th scope="col">Nome Completo</th>
+                            <th scope="col">Data de Nascimento</th>
+                            <th scope="col">Sexo</th>
+                            <th scope="col">Cidade</th>
+                            <th scope="col">Estado</th>
+                            <th scope="col">CEP</th>
+                            <th scope="col">Pedido Ativo?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Eduardo Alves</td>
+                            <td>28/04/1994</td>
+                            <td>Masculino</td>
+                            <td>Brasília</td>
+                            <td>DF</td>
+                            <td>72.258-784</td>
+                            <td>
+                                <button type="button" class="btn btn-primary" id="liveAlertBtn">Sim</button>
+                                
+                                <div class="alert alert-primary alert-dismissible" role="alert" id="liveAlert">
+                                    <strong>Pedido Postado.</strong> Aguardando Transporte.
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                        aria-label="Close"></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Carla Andrade</td>
+                            <td>25/10/1984</td>
+                            <td>Feminino</td>
+                            <td>Goiânia</td>
+                            <td>GO</td>
+                            <td>74.959‑198</td>
+                            <td>Não</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Bruno Chagas</td>
+                            <td>15/07/2000</td>
+                            <td>Masculino</td>
+                            <td>Brasília</td>
+                            <td>DF</td>
+                            <td>72.258-605</td>
+                            <td>Não</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>Samantha Cordeiro Lemonde</td>
+                            <td>06/12/1998</td>
+                            <td>Não declarar</td>
+                            <td>Parnaíba</td>
+                            <td>PI</td>
+                            <td>64.200‑900</td>
+                            <td>
+                                <button class="btn btn-primary">Sim</button>
+
+                                <div class="alert alert-warning alert-dismissible" role="alert" id="liveAlert">
+                                    <strong>Pedido Devolvido.</strong> Cliente não localizado.
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                        aria-label="Close"></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">5</th>
+                            <td>Luiza Marques Caldeira</td>
+                            <td>15/07/2000</td>
+                            <td>Feminino</td>
+                            <td>Irecê</td>
+                            <td>BA</td>
+                            <td>44.930-005</td>
+                            <td>Não</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">6</th>
+                            <td>Cheuriston Pinto</td>
+                            <td>23/01/1982</td>
+                            <td>Masculino</td>
+                            <td>Rio de Janeiro</td>
+                            <td>RJ</td>
+                            <td>20.230-010</td>
+                            <td>Não</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingThree">
+                <button class="accordion-button collapsed bg-primary text-light" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                    Exclusão Manual Permanente de Clientes
+                </button>
+            </h2>
+            <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body bg-danger">
+                    <p class="text-light">
+                        <strong>Atenção! A exclusão de usuário é irreverssível!!</strong>
+                    </p>
+                    <div align="center">
+                        <table>
+                            <tr>
+                                <td class="text-light">
+                                    Usuário
+                                </td>
+                                <td>
+                                    <input class="form-control" type="text" name="" id="" required>
+                                </td>
+                                <td class="text-light">
+                                    Senha
+                                </td>
+                                <td>
+                                    <input class="form-control" type="password" name="" id="" required>
+                                    <div class="invalid-feedback">Insira a senha.</div>
+                                    <div class="valid-feedback">Campo Válido.</div>
+                                </td>
+                            </tr>
+                        </table>
+                        <br>
+                        <button class="btn btn-outline-dark" type="submit">Autenticar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+        var alertTrigger = document.getElementById('liveAlertBtn')
+
+        function alert(message, type) {
+            var wrapper = document.createElement('div')
+            wrapper.innerHTML = '<div class="alert alert-' + type + ' alert-dismissible" role="alert">' + message + '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>'
+
+            alertPlaceholder.append(wrapper)
+        }
+
+        if (alertTrigger) {
+            alertTrigger.addEventListener('click', function () {
+                alert('Nice, you triggered this alert message!', 'success')
+            })
+        }
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function () {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+    </script>
+</body>
+
+</html>
