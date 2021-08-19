@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/bootstrap.css">
     <script src="./js/bootstrap.bundle.js"></script>
+
     <title>Formulário com Bootstrap</title>
 </head>
 
@@ -33,21 +34,21 @@
             Pedidos
             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info">
                 25
-                <span class="visually-hidden">mensagens não lidas</span>
+                
             </span>
         </button>
         <button style="margin: 15px;" type="button" class="btn btn-primary position-relative">
             Mensagens
             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">
                 159
-                <span class="visually-hidden">mensagens não lidas</span>
+                
             </span>
         </button>
         <button type="button" class="btn btn-primary position-relative">
             Devoluções
-            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            <span id="spanAdd" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                 1
-                <span class="visually-hidden">mensagens não lidas</span>
+                
             </span>
         </button>
     </div>
@@ -75,8 +76,8 @@
                             <label for="validationCustomUsername" class="form-label">Data de Nascimento</label>
                             <div class="input-group has-validation">
                                 <!--<span class="input-group-text" id="inputGroupPrepend">@</span>-->
-                                <input style="text-align: right;" type="date" class="form-control" id="validationCustomUsername"
-                                    aria-describedby="inputGroupPrepend" required>
+                                <input style="text-align: right;" type="date" class="form-control"
+                                    id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
                                 <div class="invalid-feedback">
                                     Por favor insira uma data.
                                 </div>
@@ -214,43 +215,41 @@
                                         <td>
                                             <div class="alert alert-primary alert-dismissible col-md-8" role="alert" id="liveAlert">
                                                 <strong>Pedido Postado.</strong> Aguardando Transporte.
-                                                <button type="button" class="btn-close" data-bs-dismiss="alert"
-                                                    aria-label="Close"></button>
+                                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                            </div>
                                         </td>
                                     </tr>
-                                </table> 
+                                </table>
                                 </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Carla Andrade</td>
-                            <td>25/10/1984</td>
-                            <td>Feminino</td>
-                            <td>Goiânia</td>
-                            <td>GO</td>
-                            <td>74.959‑198</td>
-                            <td>Não</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Bruno Chagas</td>
-                            <td>15/07/2000</td>
-                            <td>Masculino</td>
-                            <td>Brasília</td>
-                            <td>DF</td>
-                            <td>72.258-605</td>
-                            <td>Não</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">4</th>
-                            <td>Samantha Cordeiro Lemonde</td>
-                            <td>06/12/1998</td>
-                            <td>Não declarar</td>
-                            <td>Parnaíba</td>
-                            <td>PI</td>
-                            <td>64.200‑900</td>
-                            <td>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Carla Andrade</td>
+                                    <td>25/10/1984</td>
+                                    <td>Feminino</td>
+                                    <td>Goiânia</td>
+                                    <td>GO</td>
+                                    <td>74.959‑198</td>
+                                    <td>Não</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Bruno Chagas</td>
+                                    <td>15/07/2000</td>
+                                    <td>Masculino</td>
+                                    <td>Brasília</td>
+                                    <td>DF</td>
+                                    <td>72.258-605</td>
+                                    <td>Não</td>
+                                </tr>
+                                <tr>
+                                <th scope="row">4</th>
+                                <td>Samantha Cordeiro Lemonde</td>
+                                    <td>06/12/1998</td>
+                                    <td>Não declarar</td>
+                                    <td>Parnaíba</td>
+                                    <td>PI</td>
+                                    <td>64.200‑900</td>
+                                    <td>
                                 <table>
                                     <tr>
                                         <td>
@@ -259,8 +258,7 @@
                                         <td>
                                             <div class="alert alert-warning alert-dismissible col-md-8" role="alert" id="liveAlert">
                                                 <strong>Pedido Devolvido.</strong> Cliente não localizado.
-                                                <button type="button" class="btn-close" data-bs-dismiss="alert"
-                                                    aria-label="Close"></button>
+                                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                             </div>
                                         </td>
                                     </tr>
@@ -291,46 +289,129 @@
                 </table>
             </div>
         </div>
-        <div class="accordion-item">
-            <h2 class="accordion-header" id="flush-headingThree">
-                <button class="accordion-button collapsed bg-primary text-light" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                    Exclusão Manual Permanente de Clientes
-                </button>
-            </h2>
-            <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
-                data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body bg-danger">
-                    <p class="text-light">
-                        <strong>Atenção! A exclusão de usuário é irreverssível!!</strong>
-                    </p>
-                    <div align="center">
-                        <table>
-                            <tr>
-                                <td class="text-light">
-                                    Usuário
-                                </td>
-                                <td>
-                                    <input class="form-control" type="text" name="" id="" required>
-                                </td>
-                                <td class="text-light">
-                                    Senha
-                                </td>
-                                <td>
-                                    <input class="form-control" type="password" name="" id="" required>
-                                    <div class="invalid-feedback">Insira a senha.</div>
-                                    <div class="valid-feedback">Campo Válido.</div>
-                                </td>
-                            </tr>
-                        </table>
-                        <br>
-                        <button class="btn btn-outline-dark" type="submit">Autenticar</button>
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingThree">
+            <button class="accordion-button collapsed bg-primary text-light" type="button" data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                Cadastro de Produtos
+            </button>
+        </h2>
+        <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+            data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+                <form class="row">
+                    <div class="col-md-2">
+                        <select id="tipoProd" class="form-select" aria-label="Default select example">
+                            <option selected>Tipo do Produto</option>
+                            <option value="Bota">Bota</option>
+                            <option value="Salto">Salto</option>
+                            <option value="Tênis">Tênis</option>
+                        </select>
                     </div>
+                    <div class="col-md-2">
+                        <input id="marcaProd" type="text" class="form-control" placeholder="Marca" aria-label="Marca" required>
+                    </div>
+                    <div class="col-md-2">
+                        <input id="modeloProd" type="text" class="form-control" placeholder="Modelo" aria-label="Modelo" required>
+                    </div>
+                    <div class="col-md-2">
+                        <select id="selectProd" class="form-select" aria-label="Default select example" required>
+                            <option selected>Tamanho</option>
+                            <option value="34-35">34-35</option>
+                            <option value="35-36">35-36</option>
+                            <option value="36-37">36-37</option>
+                            <option value="37-38">37-38</option>
+                            <option value="38-39">38-39</option>
+                            <option value="39-40">39-40</option>
+                            <option value="40-41">40-41</option>
+                            <option value="41-42">41-42</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <input id="valorCompraProd" type="text" class="form-control" placeholder="Valor de Compra" aria-label="Valor de Compra" required>
+                    </div>
+                    <div class="col-md-2">
+                        <input id="valorVendaProd" type="text" class="form-control" placeholder="Valor de Venda" aria-label="Valor de Venda" required>
+                    </div>
+                    <br>
+                    <br>
+                    <div align="center">
+                        <div>
+                            <button id="btnGravar" type="submit" class="btn btn-outline-success col-md-4" onclick="gravarProduto()">Gravar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <br>
+            <div align="center" id="divAddProd">
+
+            </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingThree">
+            <button class="accordion-button collapsed bg-primary text-light" type="button" data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                Exclusão Manual Permanente de Clientes
+            </button>
+        </h2>
+        <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+            data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body bg-danger">
+                <p class="text-light">
+                    <strong>Atenção! A exclusão de usuário é irreverssível!!</strong>
+                </p>
+                <div align="center">
+                    <table>
+                        <tr>
+                            <td class="text-light">
+                                Usuário
+                            </td>
+                            <td>
+                                <input class="form-control" type="text" name="" id="" required>
+                            </td>
+                            <td class="text-light">
+                                Senha
+                            </td>
+                            <td>
+                                <input class="form-control" type="password" name="" id="" required>
+                                <div class="invalid-feedback">Insira a senha.</div>
+                                <div class="valid-feedback">Campo Válido.</div>
+                            </td>
+                        </tr>
+                    </table>
+                    <br>
+                    <button class="btn btn-outline-dark" type="submit">Autenticar</button>
                 </div>
             </div>
         </div>
     </div>
+    </div>
     <script>
+        function gravarProduto(){
+            var divProd = document.getElementById('divAddProd')
+            var gravarProd = document.createElement('div')
+
+            var tipo = document.getElementById('tipoProd').value
+            var marca = document.getElementById('marcaProd').value
+            var modelo = document.getElementById('modeloProd').value
+            var seletor = document.getElementById('selectProd').value
+            var valCompra = document.getElementById('valorCompraProd').value
+            var valVenda = document.getElementById('valorVendaProd').value
+            var incremento = 0;
+            incremento ++
+
+            gravarProd.innerHTML = '<div class="alert d-inline alert-dismissible col-md-8" role="alert" id="liveAlert">' + '<div class="card bg-dark text-white col-3">' + '<img style="width: 100%;" src="./medias/images/package.png" class="card-img-top" alt="...">' + '<div class="card-body">'
+                + '<h5 class="card-title"><strong>Tipo:</strong>'+ tipo +'</h5>' + '<p class="card-text"><strong>Marca:</strong>'+ marca + '</p>' + '<p class="card-text"><strong>Modelo:</strong>'+ modelo +'</p>' + '<p class="card-text"><strong>Tamanho:</strong>'+ seletor +'</p>'
+                + '<p class="card-text"><strong>Valor de Compra:</strong>'+ valCompra +'</p>' + '<p class="card-text"><strong>Valor de Venda:</strong>'+ valVenda +'</p>'
+                + '<a href="#" class="btn btn-primary">Go somewhere</a>' + '</div><div align="center"><button type="button" class="btn btn-danger col-4" data-bs-dismiss="alert" aria-label="Close">Remover</button></div></div></div><br>'
+            divProd.append(gravarProd)
+        }
+        function remover(){
+                var apagarElemento = document.getElementById('divAddProd')
+                apagarElemento.remove()
+        }
+
         var alertPlaceholder = document.getElementById('liveAlertPlaceholder')
         var alertTrigger = document.getElementById('liveAlertBtn')
 
