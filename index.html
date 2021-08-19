@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/bootstrap.css">
     <script src="./js/bootstrap.bundle.js"></script>
-
     <title>Formulário com Bootstrap</title>
 </head>
 
@@ -290,13 +289,13 @@
             </div>
         </div>
     <div class="accordion-item">
-        <h2 class="accordion-header" id="flush-headingThree">
+        <h2 class="accordion-header" id="flush-headingFour">
             <button class="accordion-button collapsed bg-primary text-light" type="button" data-bs-toggle="collapse"
-                data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
                 Cadastro de Produtos
             </button>
         </h2>
-        <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+        <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour"
             data-bs-parent="#accordionFlushExample">
             <div class="accordion-body">
                 <form class="row">
@@ -404,7 +403,7 @@
             gravarProd.innerHTML = '<div class="alert d-inline alert-dismissible col-md-8" role="alert" id="liveAlert">' + '<div class="card bg-dark text-white col-3">' + '<img style="width: 100%;" src="./medias/images/package.png" class="card-img-top" alt="...">' + '<div class="card-body">'
                 + '<h5 class="card-title"><strong>Tipo:</strong>'+ tipo +'</h5>' + '<p class="card-text"><strong>Marca:</strong>'+ marca + '</p>' + '<p class="card-text"><strong>Modelo:</strong>'+ modelo +'</p>' + '<p class="card-text"><strong>Tamanho:</strong>'+ seletor +'</p>'
                 + '<p class="card-text"><strong>Valor de Compra:</strong>'+ valCompra +'</p>' + '<p class="card-text"><strong>Valor de Venda:</strong>'+ valVenda +'</p>'
-                + '</div><div align="center"><button type="button" class="btn btn-outline-danger col-5" data-bs-dismiss="alert" aria-label="Close">Remover Produto</button></div></div></div><br>'
+                + '</div><div align="center"><button style="margin-bottom: 6px;" type="button" class="btn btn-outline-danger col-5" data-bs-dismiss="alert" aria-label="Close"> Remover </button></div></div></div><br>'
             divProd.append(gravarProd)
         }
         function remover(){
