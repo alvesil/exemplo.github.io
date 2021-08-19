@@ -7,10 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/bootstrap.css">
     <script src="./js/bootstrap.bundle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <title>Formulário com Bootstrap</title>
 </head>
 
-<body class="bg-dark">
+<body onload="startTime()" class="bg-dark">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="#">Home</a></li>
@@ -20,8 +21,12 @@
     </nav>
     <br>
     <div align="center">
+        <button type="button" class="btn-lg btn-warning">
+            Receitas <span id="receitas" class="badge bg-success">0</span>
+            Despesas <span id="despesas" class="badge bg-danger">R$ 2160.00</span>
+        </button>
         <button type="button" class="btn btn-primary">
-            Clientes cadastrados <span class="badge bg-success">6</span>
+            Clientes cadastrados <span id="clientOk"class="badge bg-success">6</span>
         </button>
         <button type="button" class="btn btn-primary">
             Clientes Satisfeitos <span class="badge bg-dark">4</span>
@@ -33,23 +38,22 @@
             Pedidos
             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info">
                 25
-                
             </span>
         </button>
         <button style="margin: 15px;" type="button" class="btn btn-primary position-relative">
             Mensagens
-            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">
-                159
-                
+            <span id="msgS" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">
+                159  
             </span>
         </button>
         <button type="button" class="btn btn-primary position-relative">
             Devoluções
             <span id="spanAdd" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                 1
-                
             </span>
         </button>
+        <div style="font-size: 36px; font-weight: 500;" class="text-light" id="txt"></div>
+        <canvas class="bg-light" id="myChart" style="width:50%;max-width:750px;"></canvas>
     </div>
     <br>
     <div class="accordion accordion-flush" id="accordionFlushExample">
@@ -60,7 +64,7 @@
                     Cadastrar Clientes
                 </button>
             </h2>
-            <div id="flush-collapseOne" class="accordion-collapse collapse show" aria-labelledby="flush-headingOne"
+            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
                 data-bs-parent="#accordionFlushExample">
                 <div class="accordion-body">
                     <form class="row g-3 needs-validation" novalidate>
@@ -301,7 +305,7 @@
                 <div class="row">
                     <div class="col-md-2">
                         <select id="tipoProd" class="form-select" aria-label="Default select example">
-                            <option selected>Tipo do Produto</option>
+                            <option selected>Tipo de Produto</option>
                             <option value="Bota">Bota</option>
                             <option value="Salto">Salto</option>
                             <option value="Tênis">Tênis</option>
@@ -342,7 +346,7 @@
                 </div>
             </div>
             <br>
-            <div style="background-image: radial-gradient(white,black);" align="center" id="divAddProd" class="col-md-12" style="margin: 10px;">
+            <div style="background-image: radial-gradient(white,black);" align="center" id="divAddProd" class="card" style="margin: 10px;">
                 
             </div>
         </div>
@@ -387,6 +391,67 @@
     </div>
     </div>
     <script>
+        var receita = 6500.00;
+        var despesa = 1750.00;
+        var messages = 150;
+        var clientes = 6;
+        
+        function startTime() {
+        const today = new Date();
+        let h = today.getHours();
+        let m = today.getMinutes();
+        let s = today.getSeconds();
+        m = checkTime(m);
+        s = checkTime(s);
+        document.getElementById('txt').innerHTML =  h + ":" + m + ":" + s;
+        setTimeout(startTime, 1000);
+
+        if (s == '10' || s == '30') {  
+            receita += 35.00;
+            messages += 3;
+        }
+        if (s == '40') {
+            despesa += 5.00;
+            clientes += 2;
+        }
+        
+        document.getElementById("receitas").textContent = 'R$'+parseFloat(receita).toFixed(2);
+        document.getElementById("despesas").textContent = 'R$'+parseFloat(despesa).toFixed(2);
+        document.getElementById("msgS").textContent = messages;
+        document.getElementById("clientOk").textContent = clientes;
+        }
+
+        function checkTime(i) {
+        if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+        return i;
+        }
+
+        var xValues = ['Domingo','Segunda-Feira','Terça-Feira','Quarta-Feira','Quinta-Feira','Sexta-Feira','Sábado'];
+        var yValues = [35,8,12,4,10,17,26];
+
+        new Chart("myChart", {
+        type: "line",
+        data: {
+            labels: xValues,
+            datasets: [{
+            fill: false,
+            lineTension: 0,
+            backgroundColor: "rgba(0,0,255,1.0)",
+            borderColor: "rgba(0,0,0,0.6)",
+            data: yValues
+            }]
+        },
+        options: {
+            legend: {display: false},
+            title: {
+                display: true,
+                text: "Vendas Semanais",
+            },
+            scales: {
+            yAxes: [{ticks: {min: 0, max:50}}],
+            }
+        }
+        });
         function gravarProduto(){
             var divProd = document.getElementById('divAddProd')
             var gravarProd = document.createElement('div')
@@ -398,9 +463,9 @@
             var valCompra = document.getElementById('valorCompraProd').value
             var valVenda = document.getElementById('valorVendaProd').value
 
-            gravarProd.innerHTML = '<div class="alert d-inline alert-dismissible col-md-8 d-inline" role="alert" id="liveAlert">' + '<div class="card bg-dark text-white col-3">' + '<img style="width: 100%;" src="./medias/images/package.png" class="card-img-top" alt="...">' + '<div class="card-body">'
-                + '<h5 class="card-title"><strong>Tipo:</strong>'+ tipo +'</h5>' + '<p class="card-text"><strong>Marca:</strong>'+ marca + '</p>' + '<p class="card-text"><strong>Modelo:</strong>'+ modelo +'</p>' + '<p class="card-text"><strong>Tamanho:</strong>'+ seletor +'</p>'
-                + '<p class="card-text"><strong>Valor de Compra:</strong>'+ valCompra +'</p>' + '<p class="card-text"><strong>Valor de Venda:</strong>'+ valVenda +'</p>'
+            gravarProd.innerHTML = '<div class="alert d-inline alert-dismissible col-sm-4 d-inline" role="alert" id="liveAlert">' + '<div class="card bg-dark text-white col-3">' + '<img style="width: 100%;" src="./medias/images/package.png" class="card-img-top" alt="...">' + '<div class="card-body">'
+                + '<h5 class="card-title"><strong class="text-warning">Tipo: </strong>'+ tipo +'</h5>' + '<p class="card-text"><strong class="text-warning">Marca: </strong>'+ marca + '</p>' + '<p class="card-text"><strong class="text-warning">Modelo: </strong>'+ modelo +'</p>' + '<p class="card-text"><strong class="text-warning">Tamanho: </strong>'+ seletor +'</p>'
+                + '<p class="card-text"><strong class="text-warning">Valor de Compra: </strong>R$'+ valCompra +'</p>' + '<p class="card-text"><strong class="text-warning">Valor de Venda: </strong>R$'+ valVenda +'</p>'
                 + '</div><div align="center"><button style="margin-bottom: 6px;" type="button" class="btn btn-outline-danger col-5" data-bs-dismiss="alert" aria-label="Close"> Remover </button></div></div></div><br>'
             divProd.append(gravarProd)
         }
