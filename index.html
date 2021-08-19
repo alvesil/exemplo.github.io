@@ -342,8 +342,8 @@
                 </div>
             </div>
             <br>
-            <div align="center" id="divAddProd">
-
+            <div style="background-image: radial-gradient(white,black);" align="center" id="divAddProd" class="col-md-12" style="margin: 10px;">
+                
             </div>
         </div>
     </div>
@@ -397,10 +397,8 @@
             var seletor = document.getElementById('selectProd').value
             var valCompra = document.getElementById('valorCompraProd').value
             var valVenda = document.getElementById('valorVendaProd').value
-            var incremento = 0;
-            incremento ++
 
-            gravarProd.innerHTML = '<div class="alert d-inline alert-dismissible col-md-8" role="alert" id="liveAlert">' + '<div class="card bg-dark text-white col-3">' + '<img style="width: 100%;" src="./medias/images/package.png" class="card-img-top" alt="...">' + '<div class="card-body">'
+            gravarProd.innerHTML = '<div class="alert d-inline alert-dismissible col-md-8 d-inline" role="alert" id="liveAlert">' + '<div class="card bg-dark text-white col-3">' + '<img style="width: 100%;" src="./medias/images/package.png" class="card-img-top" alt="...">' + '<div class="card-body">'
                 + '<h5 class="card-title"><strong>Tipo:</strong>'+ tipo +'</h5>' + '<p class="card-text"><strong>Marca:</strong>'+ marca + '</p>' + '<p class="card-text"><strong>Modelo:</strong>'+ modelo +'</p>' + '<p class="card-text"><strong>Tamanho:</strong>'+ seletor +'</p>'
                 + '<p class="card-text"><strong>Valor de Compra:</strong>'+ valCompra +'</p>' + '<p class="card-text"><strong>Valor de Venda:</strong>'+ valVenda +'</p>'
                 + '</div><div align="center"><button style="margin-bottom: 6px;" type="button" class="btn btn-outline-danger col-5" data-bs-dismiss="alert" aria-label="Close"> Remover </button></div></div></div><br>'
